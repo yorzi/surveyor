@@ -40,6 +40,6 @@
               = render(:partial => question.question_group.custom_renderer || "/partials/question_group", :locals => {:question_group => question.question_group, :response_set => @response_set, :group_questions => group_questions})
               - group_questions = []
     .next_section
-      =link_to("Save & Exit",dashboard_path)
+      =link_to("Save & Exit",(@current_user.is_a?(Admin) ? administrations_path : dashboard_path))
       =next_section
       
